@@ -1,0 +1,18 @@
+Proyecto "Diana"
+
+La aplicacion "Diana" sera una aplicacion que registre las jugadas marcadas, de uno o varios jugadores para asi poder
+contar la cantidad de veces que dicho jugador ha acertado varios numeros en concreto.
+
+Las jugadas que deben registrarse seran:
+ - Diana simple (25)
+ - Diana doble (50)
+ - 20 triple
+ - 19 triple
+ - 18 triple
+ - 17 triple
+ - 1 cualquiera de ellos
+ - Fuera de la diana (pared)
+
+Al finalizar la partida, deben registrarse el orden de los ganadores. Tener en cuenta que se puede jugar individualmente
+o en grupo, o una mezcla de ellos.
+

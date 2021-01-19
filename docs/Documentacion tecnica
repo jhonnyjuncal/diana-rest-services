@@ -1,0 +1,94 @@
+Proyecto "Diana"
+
+Descripcion de los microservicios necesarios para el registro de informacion del juego.
+
+
+Servicio de registro de jugadas
+-------------------------------
+* Este servicio guarda en bbdd una jugada
+
+Path: /v1/diana/move
+Method: POST
+Parametros de la peticion:
+ - Usuario (clase java)
+ - Jugada (clase java)
+Parametros de la respuesta:
+ - HTTP OK 200
+ - HTTP ERROR 400
+
+Servicio de resultados parciales
+--------------------------------
+* Este servicio devuelve la informacion actual de jugadas de todos los jugadores con sus jugadas
+
+Path: /v1/diana/results
+Method: GET
+Parametros de la respuesta
+ - List<Puntuacion> (clase java)
+
+
+
+** Descripcion de las clases java a desarrollar **
+
+Usuario:
+ - Integer id
+ - String nombre
+
+Jugada:
+ - Integer id
+ - Integer valor
+
+Puntuacion:
+ - Usuario
+ - Hashmap<Jugada, numero>
+
+
+
+** Estructura basica del proyecto (capas) **
+
+paqueteria: com.diana
+
+controller
+ - paquete donde van las clases de los controladores (@Controller)
+service
+ - paquete donde van las clases de los servicios (@Service)
+repository
+ - paquete donde van las clases de los repositorios (@Repository)
+
+
+
+Servicios
+---------
+
+nombre: registerPlayed
+Parametros: Usuario, Jugada
+Respuesta: boolean
+Descripcion: Este servicio llama al repositorio para almacenar los datos
+
+
+nombre: getResults
+Parametros: -
+Respuesta: List<Puntuacion>
+Descripcion: Devuelve la lista de puntuaciones de todos los jugadores
+
+
+
+Controladores
+-------------
+
+nombre: registerPlayed
+Parametros: Usuario, Jugada
+Respuesta: HTTP OK o HTTP ERROR
+Descripcion: llama al servicio "registerPlayed"
+
+
+nombre: getResults
+Parametros: -
+Respuesta: List<Puntuacion> (Response)
+Descripcion: llama al servicio "getResults"
+
+
+
+Repositorios
+------------
+
+pendiente de definir
